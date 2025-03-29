@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSURUMI Pumps - Product Details</title>
+    <style>
+        /* Inline CSS matching the previous page styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .product-section {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-header {
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+        }
+        
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-right: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header h2 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .product-image {
+            width: 50%;
+            height: 500px;
+            border-bottom: 1px solid #eee;
+ margin: 0 auto;        }
+        
+        .product-content {
+            padding: 35px;
+        }
+        
+        .product-content h3 {
+            color: #222;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .product-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #1a936f;
+        }
+        
+        .product-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .features-list {
+            columns: 2;
+            column-gap: 40px;
+            margin: 25px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1a936f;
+            font-weight: bold;
+        }
+        
+        .pump-types {
+            margin-top: 30px;
+        }
+        
+        .pump-type {
+            background: #f9f9f9;
+            border-left: 4px solid #1a936f;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .pump-type h4 {
+            margin-top: 0;
+            color: #1a936f;
+        }
+        
+        .eco-badge {
+            display: inline-block;
+            background-color: #1a936f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: #1a936f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 2px solid #1a936f;
+        }
+        
+        .back-button:hover {
+            background-color: white;
+            color: #1a936f;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .features-list {
+                columns: 1;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .product-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .product-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .product-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>TSURUMI PUMP TECHNOLOGY</h1>
+            <p>A globally recognized Japanese brand specializing in advanced submersible pump technology for construction, industrial, and municipal applications worldwide.</p>
+        </div>
+        
+        <!-- TSURUMI Pumps Section -->
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-icon">💧</div>
+                <div class="product-header-content">
+                    <h2>TSURUMI Pumps</h2>
+                    <p>Durable and efficient submersible pumping solutions for demanding applications</p>
+                </div>
+            </div>
+            <img src="images/200.jpg" alt="TSURUMI Pumps" class="product-image">
+            <div class="product-content">
+                <p>TSURUMI is a Japanese engineering leader in submersible pump technology, known worldwide for durable, high-performance pumps that handle the most challenging dewatering, wastewater, and slurry applications. With innovative engineering and reliable performance, TSURUMI pumps are built to withstand harsh conditions while delivering exceptional efficiency.</p>
+                
+                <h3>Core Product Lines</h3>
+                <div class="pump-types">
+                    <div class="pump-type">
+                        <h4>Submersible Dewatering Pumps <span class="eco-badge">HEAVY-DUTY</span></h4>
+                        <p>Engineered for construction and mining applications, capable of handling clean to slightly dirty water with high efficiency.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Sewage & Wastewater Pumps</h4>
+                        <p>Designed to handle solids and sludge with clog-resistant designs for municipal and industrial wastewater applications.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Slurry Pumps</h4>
+                        <p>Heavy-duty pumps built to move abrasive materials in mining, dredging, and industrial processes.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Corrosion-Resistant Pumps</h4>
+                        <p>Specialized models with enhanced materials for harsh chemical environments and seawater applications.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>High-Head & High-Volume Pumps</h4>
+                        <p>Powerful solutions for large-scale drainage and flood control applications.</p>
+                    </div>
+                </div>
+                
+                <h3>Product Advantages</h3>
+                <ul class="features-list">
+                    <li>Robust construction for long service life in tough conditions</li>
+                    <li>Advanced hydraulic designs for maximum efficiency</li>
+                    <li>Oil-lubricated mechanical seals for superior reliability</li>
+                    <li>Thermal protection to prevent motor burnout</li>
+                    <li>Compact designs for easy installation and handling</li>
+                    <li>Low maintenance requirements</li>
+                    <li>Wide range of sizes and configurations</li>
+                    <li>Global support network with quick service response</li>
+                </ul>
+                
+                <h3>Applications</h3>
+                <ul class="features-list">
+                    <li>Construction site dewatering</li>
+                    <li>Mining and mineral processing</li>
+                    <li>Municipal wastewater systems</li>
+                    <li>Industrial process water handling</li>
+                    <li>Flood control and disaster recovery</li>
+                    <li>Tunnel and underground construction</li>
+                    <li>Quarry and dredging operations</li>
+                    <li>Chemical processing plants</li>
+                    <li>Marine and offshore applications</li>
+                    <li>Agricultural water management</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="products.html" class="back-button">← Back to Products</a>
+    </div>
+</body>
+</html>

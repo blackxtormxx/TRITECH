@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calpeda Pumps - Product Details</title>
+    <style>
+        /* Inline CSS matching the previous page styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .product-section {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-header {
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+        }
+        
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-right: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header h2 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .product-image {
+            
+            width: 50%;
+            height: 500px;
+            border-bottom: 1px solid #eee;
+ margin: 0 auto;        }
+        
+        .product-content {
+            padding: 35px;
+        }
+        
+        .product-content h3 {
+            color: #222;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .product-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #1a936f;
+        }
+        
+        .product-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .features-list {
+            columns: 2;
+            column-gap: 40px;
+            margin: 25px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1a936f;
+            font-weight: bold;
+        }
+        
+        .pump-types {
+            margin-top: 30px;
+        }
+        
+        .pump-type {
+            background: #f9f9f9;
+            border-left: 4px solid #1a936f;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .pump-type h4 {
+            margin-top: 0;
+            color: #1a936f;
+        }
+        
+        .eco-badge {
+            display: inline-block;
+            background-color: #1a936f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: #1a936f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 2px solid #1a936f;
+        }
+        
+        .back-button:hover {
+            background-color: white;
+            color: #1a936f;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .features-list {
+                columns: 1;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .product-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .product-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .product-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CALPEDA PUMP SYSTEMS</h1>
+            <p>Italian-engineered pumping solutions combining technological innovation with energy efficiency and environmental sustainability for superior performance across all applications.</p>
+        </div>
+        
+        <!-- Calpeda Pumps Section -->
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-icon">🌱</div>
+                <div class="product-header-content">
+                    <h2>Calpeda Pumps</h2>
+                    <p>Advanced pumping technology for a sustainable future</p>
+                </div>
+            </div>
+            <img src="images/190.jpg" alt="Calpeda Pumps" class="product-image">
+            <div class="product-content">
+                <p>Calpeda is a leading Italian pump manufacturer focused on the latest technological innovations, energy efficiency, and environmental sustainability. Their advanced pumps are designed to reduce energy consumption while delivering high performance across water supply, heating, and industrial processes.</p>
+                
+                <h3>Core Technologies</h3>
+                <div class="pump-types">
+                    <div class="pump-type">
+                        <h4>Energy Efficient Designs <span class="eco-badge">ECO</span></h4>
+                        <p>Patented hydraulic designs that minimize energy consumption without compromising performance.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Smart Pumping Solutions</h4>
+                        <p>Integrated control systems that optimize performance based on demand and operating conditions.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Sustainable Materials</h4>
+                        <p>Environmentally responsible material selection and manufacturing processes.</p>
+                    </div>
+                </div>
+                
+                <h3>Product Advantages</h3>
+                <ul class="features-list">
+                    <li>Up to 30% energy savings compared to conventional pumps</li>
+                    <li>Reduced carbon footprint and environmental impact</li>
+                    <li>Precision-engineered for maximum reliability</li>
+                    <li>Wide range of sizes and configurations</li>
+                    <li>Low maintenance requirements</li>
+                    <li>Quiet operation technology</li>
+                    <li>Extended product lifespan</li>
+                    <li>Global service and support network</li>
+                </ul>
+                
+                <h3>Applications</h3>
+                <ul class="features-list">
+                    <li>Residential and commercial water supply</li>
+                    <li>HVAC and heating systems</li>
+                    <li>Industrial process pumping</li>
+                    <li>Water treatment and circulation</li>
+                    <li>Irrigation and agricultural systems</li>
+                    <li>Pressure boosting applications</li>
+                    <li>Solar thermal systems</li>
+                    <li>Fire protection systems</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="products.html" class="back-button">← Back to Products</a>
+    </div>
+</body>
+</html>

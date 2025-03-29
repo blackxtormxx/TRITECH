@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRP Water Tanks & HDPE Pipes - Product Details</title>
+    <style>
+        /* Inline CSS matching the previous page styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .product-section {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .product-header {
+            padding: 25px;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a936f 0%, #114b5f 100%);
+        }
+        
+        .product-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+        
+        .product-icon {
+            font-size: 2.5rem;
+            margin-right: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .product-header h2 {
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-content {
+            padding: 35px;
+        }
+        
+        .product-content h3 {
+            color: #222;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .product-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #1a936f;
+        }
+        
+        .product-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+        
+        .features-list {
+            columns: 2;
+            column-gap: 40px;
+            margin: 25px 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .features-list li {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            position: relative;
+            padding-left: 25px;
+            font-size: 1.05rem;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #1a936f;
+            font-weight: bold;
+        }
+        
+        .pump-types {
+            margin-top: 30px;
+        }
+        
+        .pump-type {
+            background: #f9f9f9;
+            border-left: 4px solid #1a936f;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .pump-type h4 {
+            margin-top: 0;
+            color: #1a936f;
+        }
+        
+        .eco-badge {
+            display: inline-block;
+            background-color: #1a936f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 12px 25px;
+            background-color: #1a936f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 2px solid #1a936f;
+        }
+        
+        .back-button:hover {
+            background-color: white;
+            color: #1a936f;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .features-list {
+                columns: 1;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .product-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            
+            .product-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .product-content {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>GRP WATER TANKS & HDPE PIPING SYSTEMS</h1>
+            <p>High-performance GRP water storage solutions and premium HDPE piping systems offering durability, corrosion resistance, and long-term reliability for water management applications.</p>
+        </div>
+        
+        <!-- GRP & HDPE Products Section -->
+        <div class="product-section">
+            <div class="product-header">
+                <div class="product-icon">🚰</div>
+                <div class="product-header-content">
+                    <h2>GRP Tanks & HDPE Pipes</h2>
+                    <p>Advanced water storage and distribution solutions with 50+ year service life</p>
+                </div>
+            </div>
+            <img src="images/908.jpg" alt="GRP Tanks and HDPE Pipes" class="product-image">
+            <div class="product-content">
+                <p>Our GRP (Glass Reinforced Plastic) water tanks and HDPE (High-Density Polyethylene) piping systems represent the pinnacle of modern water infrastructure technology. These products combine exceptional durability with environmental safety, making them ideal for municipal, residential, and industrial applications where long-term performance and water quality preservation are paramount.</p>
+                
+                <h3>Key Product Features</h3>
+                <div class="pump-types">
+                    <div class="pump-type">
+                        <h4>GRP Water Tanks <span class="eco-badge">DURABLE</span></h4>
+                        <p>Glass Reinforced Plastic tanks offering superior strength-to-weight ratio, corrosion resistance, and long service life for water storage applications.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>HDPE Pipes & Fittings</h4>
+                        <p>High-Density Polyethylene piping systems that are non-toxic, corrosion-resistant, and flexible with smooth interior walls for optimal flow.</p>
+                    </div>
+                </div>
+                
+                <h3>Product Advantages</h3>
+                <ul class="features-list">
+                    <li>Non-toxic materials free from heavy metals</li>
+                    <li>Excellent corrosion resistance for all water types</li>
+                    <li>Smooth interior walls for high flow capacity</li>
+                    <li>Flexible design allows for coil delivery (HDPE)</li>
+                    <li>Highly impact-resistant and UV-stable</li>
+                    <li>Lightweight for easy handling and installation</li>
+                    <li>Service life exceeding 50 years</li>
+                    <li>Reduced installation and maintenance costs</li>
+                    <li>Sanitary materials ensure no secondary pollution</li>
+                    <li>Resistant to chemical and biological degradation</li>
+                </ul>
+                
+                <h3>Applications</h3>
+                <ul class="features-list">
+                    <li>Municipal water supply systems</li>
+                    <li>Residential water storage and distribution</li>
+                    <li>Industrial liquid transportation</li>
+                    <li>Sewage and wastewater treatment</li>
+                    <li>Agricultural irrigation systems</li>
+                    <li>Fire protection water storage</li>
+                    <li>Rainwater harvesting systems</li>
+                    <li>Desalination plants</li>
+                    <li>Chemical processing facilities</li>
+                    <li>Mining and mineral processing</li>
+                </ul>
+                
+                <h3>Our Services</h3>
+                <div class="pump-types">
+                    <div class="pump-type">
+                        <h4>Pipe Installation and Guidance</h4>
+                        <p>Professional installation services with expert guidance for optimal system performance.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Fitting Solutions</h4>
+                        <p>Comprehensive range of fittings and connection solutions for complete system integration.</p>
+                    </div>
+                    <div class="pump-type">
+                        <h4>Welding Devices and Machines</h4>
+                        <p>High-quality welding equipment and services for perfect HDPE joint connections.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <a href="products.html" class="back-button">← Back to Products</a>
+    </div>
+</body>
+</html>
