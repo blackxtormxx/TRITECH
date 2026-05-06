@@ -78,20 +78,19 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
 
 <body class="sub_page">
 
-  <!-- Floating Nav -->
-  <nav class="glass-nav">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="../">
-        <img src="../images/logo2.png" alt="Tritech" style="height: 45px;">
-      </a>
-      <div class="d-none d-lg-flex" style="display: flex;">
-        <a href="../" class="nav-link">Home</a>
-        <a href="../about/" class="nav-link">About Us</a>
-        <a href="../products/" class="nav-link">Products</a>
-        <a href="../contact/" class="nav-link">Contact Us</a>
+    <!-- Navbar -->
+  <nav class="tt-nav" id="mainNav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="logo"><img src="../images/logo2.png" alt="Tritech Marketing"></a>
+        <div class="nav-links" id="navLinks">
+          <a href="../index.html">Home</a>
+          <a href="../about/">About Us</a>
+          <a href="../products/">Products</a>
+          <a href="../contact/" class="active">Contact Us</a>
+        </div>
+        <button class="mob-btn" id="mobBtn"><i class="fas fa-bars"></i></button>
       </div>
-      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
-      <button class="btn d-lg-none" style="color:#0f172a;"><i class="fa fa-bars" style="font-size: 1.5rem;"></i></button>
     </div>
   </nav>
 
@@ -192,92 +191,56 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
     </div>
   </section>
 
-  <!-- footer section -->
-<footer class="footer_section" style="background: #ffffff; color: #0f172a; padding: 60px 0 20px; font-family: 'Inter', sans-serif; border-top: 1px solid #e2e8f0; position: relative; overflow: hidden;">
-  <!-- Subtle ambient decoration -->
-  <div style="position: absolute; top: -80px; right: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(217,119,6,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-  <div style="position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-
-  <div class="container" style="position: relative; z-index: 2;">
+<!-- FOOTER -->
+<footer class="tt-foot">
+  <div style="position:absolute;top:-80px;right:-80px;width:250px;height:250px;background:radial-gradient(circle,rgba(217,119,6,0.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(59,130,246,0.04) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:2;">
     <div class="row mb-4">
-      <!-- Left: Brand -->
       <div class="col-lg-4 mb-4 mb-lg-0">
-        <a href="../" style="display: inline-block; margin-bottom: 18px; text-decoration: none;">
-          <img src="../images/logo2.png" alt="TRITECH" style="height: 45px;">
+        <a href="../index.html" style="display:inline-block;margin-bottom:18px;text-decoration:none;">
+          <img src="../images/logo2.png" alt="TRITECH" class="flogo">
         </a>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.7; max-width: 300px;">
-          One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing & Environmental solutions.
-        </p>
-      </div>
-
-      <!-- Middle: Quick Links -->
-      <div class="col-lg-4 mb-4 mb-lg-0">
-        <h5 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 22px; display: flex; align-items: center; gap: 10px;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(217,119,6,0.1); border-radius: 8px;">
-            <i class="fas fa-arrow-right" style="color: #d97706; font-size: 12px;"></i>
-          </span> Quick Links
-        </h5>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 30px;">
-          <a href="../" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Home
-          </a>
-          <a href="../about/" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> About Us
-          </a>
-          <a href="../products/" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Products
-          </a>
-          <a href="../contact/" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Contact Us
-          </a>
+        <p class="fdesc">One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing &amp; Environmental solutions.</p>
+        <div style="margin-top:22px;">
+          <a href="#" class="fsocial"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="fsocial"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/94770109746" class="fsocial"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="fsocial"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-
-      <!-- Right: Location -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <h5><span class="hico"><i class="fas fa-arrow-right"></i></span> Quick Links</h5>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;">
+          <a href="../index.html" class="flink">Home</a>
+          <a href="../about/" class="flink">About Us</a>
+          <a href="../products/" class="flink">Products</a>
+          <a href="../contact/" class="flink">Contact Us</a>
+          <a href="../projects/" class="flink">Our Projects</a>
+        </div>
+      </div>
       <div class="col-lg-4">
-        <h5 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 22px; display: flex; align-items: center; gap: 10px;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(217,119,6,0.1); border-radius: 8px;">
-            <i class="fa fa-map-marker-alt" style="color: #d97706; font-size: 12px;"></i>
-          </span> Our Location
-        </h5>
-        <p style="color: #475569; font-size: 14px; line-height: 1.7; margin-bottom: 5px; font-weight: 600;">TRITECH Marketing Int. (Pvt) Ltd</p>
-        <p style="color: #64748b; font-size: 13px; line-height: 1.7; margin-bottom: 0;">
-          No. 87, Sawsiri Road,<br>
-          Sapugaskanda, Kiribathgoda,<br>
-          Sri Lanka &mdash; 11640
-        </p>
-      </div>
-    </div>
-
-    <!-- Bottom Ribbon -->
-    <div style="border-top: 1px solid #e2e8f0; padding-top: 22px; margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
-      <!-- Contact Chips -->
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="mailto:sales.mkt@tritech.lk" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: #f8fafc; padding: 10px 18px; border-radius: 50px; border: 1px solid #f1f5f9; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <i class="fas fa-envelope" style="color: #d97706; font-size: 14px;"></i>
-          <span style="font-size: 13px; color: #0f172a; font-weight: 600;">sales.mkt@tritech.lk</span>
+        <h5><span class="hico"><i class="fa fa-map-marker-alt"></i></span> Our Location</h5>
+        <a class="fcontact" href="#">
+          <span class="ico"><i class="fas fa-map-marker-alt"></i></span>
+          <span>No. 87, Sawsiri Road, Sapugaskanda, Kiribathgoda, Sri Lanka &mdash; 11640</span>
         </a>
-        <a href="tel:+94770109746" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: #f8fafc; padding: 10px 18px; border-radius: 50px; border: 1px solid #f1f5f9; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <i class="fas fa-phone-alt" style="color: #d97706; font-size: 14px;"></i>
-          <span style="font-size: 13px; color: #0f172a; font-weight: 600;">+94 770109746</span>
+        <a class="fcontact" href="tel:+94770109746">
+          <span class="ico"><i class="fas fa-phone-alt"></i></span>
+          <span>+94 770 109 746</span>
+        </a>
+        <a class="fcontact" href="mailto:sales.mkt@tritech.lk">
+          <span class="ico"><i class="fas fa-envelope"></i></span>
+          <span>sales.mkt@tritech.lk</span>
         </a>
       </div>
-
-      <!-- Socials -->
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 13px; font-weight: 500; color: #94a3b8;">Follow us</span>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
-
-    <!-- Copyright -->
-    <p style="text-align: center; color: #cbd5e1; font-size: 12px; margin: 20px 0 0; letter-spacing: 0.5px;">&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+    <div class="fbot">
+      <p>&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+      <p>Excellence in Engineering Since 1999</p>
+    </div>
   </div>
 </footer>
-<!-- footer section -->
 
   <!-- jQery -->
   <script src="../js/jquery-3.4.1.min.js"></script>
@@ -374,6 +337,23 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
   </script>
 
   <script src="../js/theme.js"></script>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobBtn').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('mob-open');
+    });
+    document.querySelectorAll('#navLinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('navLinks').classList.remove('mob-open');
+      });
+    });
+    // Scroll shadow on navbar
+    window.addEventListener('scroll', function() {
+      document.getElementById('mainNav').style.boxShadow =
+        window.scrollY > 30 ? '0 4px 24px rgba(15,23,42,0.08)' : 'none';
+    });
+  </script>
 </body>
 
 </html>
