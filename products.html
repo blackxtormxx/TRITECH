@@ -34,6 +34,9 @@
   h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
   img { max-width: 100%; }
 
+  /* Hide page hero — products page starts at category tabs */
+  .page-hero { display: none !important; }
+
   /* NAVBAR */
   .tt-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); transition: box-shadow 0.4s; padding: 14px 0; }
   .tt-nav .nav-inner { display: flex; align-items: center; justify-content: space-between; }
@@ -46,18 +49,9 @@
   .mob-btn { display: none; background: none; border: 1px solid var(--amber-border); padding: 8px 13px; color: var(--navy); cursor: pointer; font-size: 1.05rem; line-height: 1; border-radius: 8px; }
   @media(max-width:991px){ .tt-nav .nav-links { display: none; flex-direction: column; align-items: flex-start; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); padding: 12px 0; box-shadow: 0 8px 24px rgba(15,23,42,0.08); border-bottom: 1px solid rgba(0,0,0,0.07); } .tt-nav .nav-links.mob-open { display: flex; } .tt-nav .nav-links a { margin: 0; padding: 12px 28px; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.04); } .tt-nav .nav-links a:last-child { border-bottom: none; } .mob-btn { display: block; } }
 
-  /* PAGE HERO */
-  .page-hero { position: relative; padding: 140px 0 80px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 55%, #e2e8f0 100%); overflow: hidden; }
-  .page-hero-deco { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 420px; opacity: 0.06; pointer-events: none; }
-  .page-hero-content { position: relative; z-index: 2; }
-  .pg-eyebrow { display: inline-flex; align-items: center; gap: 14px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 18px; }
-  .pg-eyebrow::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--amber); }
-  .pg-title { font-size: clamp(2.6rem,5vw,4rem); font-weight: 800; color: var(--navy); margin-bottom: 20px; }
-  .breadcrumb-row { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); font-family: 'Inter', sans-serif; }
-  .breadcrumb-row a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-  .breadcrumb-row a:hover { color: var(--amber); }
-  .breadcrumb-row span { color: var(--amber-border); }
-  .breadcrumb-row .current { color: var(--amber); }
+  /* SECTION */
+  .tt-sec { padding: 90px 0; }
+  .tt-sec:first-of-type { padding-top: 110px; }
 
   /* CATEGORY TABS */
   .cat-tabs { display: flex; gap: 0; border: 1px solid var(--border); background: var(--white); flex-wrap: wrap; margin-bottom: 70px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
@@ -67,9 +61,6 @@
   .cat-tab:hover, .cat-tab.active { color: var(--amber); background: var(--amber-pale); text-decoration: none; }
   .cat-tab:hover::after, .cat-tab.active::after { width: 100%; }
   .cat-tab i { display: block; font-size: 1.25rem; margin-bottom: 8px; color: inherit; }
-
-  /* SECTION */
-  .tt-sec { padding: 90px 0; }
 
   /* CATEGORY HEADER STRIP */
   .cat-header-strip { display: flex; align-items: center; gap: 20px; margin-bottom: 44px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
@@ -161,9 +152,6 @@
     </div>
   </div>
 </nav>
-
-<!-- PAGE HERO -->
-
 
 <!-- PRODUCTS -->
 <section class="tt-sec">
@@ -257,7 +245,6 @@
       <div class="pipe-body">
         <h3>PP-R Pipes — Aquatherm</h3>
         <p>Aquatherm PP-R pipes represent the pinnacle of polypropylene engineering — a premium-grade piping system trusted globally for hot and cold water, heating, and industrial fluid distribution. Fusion-welded joints eliminate corrosion risks and provide a leak-free lifetime of performance with minimal maintenance.</p>
-        
         <a href="aquatherm-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -269,7 +256,6 @@
       <div class="pipe-body">
         <h3>HDPE Pipes — Puhui</h3>
         <p>High-Density Polyethylene pipes by Puhui deliver outstanding flexibility, chemical resistance and impact strength for water supply, sewerage, gas distribution, and industrial networks. HDPE's electrofusion and butt-fusion welding ensure fully monolithic joints for demanding buried and above-ground conditions.</p>
-        
         <a href="HDPE-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -377,23 +363,15 @@
       this.classList.add('active');
     });
   });
+  // Mobile menu toggle
+  document.getElementById('mobBtn').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('mob-open');
+  });
+  document.querySelectorAll('#navLinks a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('navLinks').classList.remove('mob-open');
+    });
+  });
 </script>
-
-  <script>
-    // Mobile menu toggle
-    document.getElementById('mobBtn').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('mob-open');
-    });
-    document.querySelectorAll('#navLinks a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        document.getElementById('navLinks').classList.remove('mob-open');
-      });
-    });
-    // Scroll shadow on navbar
-    window.addEventListener('scroll', function() {
-      document.getElementById('mainNav').style.boxShadow =
-        window.scrollY > 30 ? '0 4px 24px rgba(15,23,42,0.08)' : 'none';
-    });
-  </script>
 </body>
 </html>
