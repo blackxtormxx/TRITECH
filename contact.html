@@ -1,379 +1,473 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="TRITECH, Contact, Engineering, Sri Lanka" />
-  <meta name="description" content="Contact TRITECH Engineers for high-quality engineering solutions in Sri Lanka" />
-  <meta name="author" content="TRITECH" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>Contact Us — Tritech Marketing</title>
+  <link rel="shortcut icon" href="images/favicon.png"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --bg:#FDFCF8; --bg-alt:#F4F0E6; --bg-warm:#EDE8DC;
+    --navy:#1A2B45; --gold:#C4952A; --gold-deep:#9E7820;
+    --gold-pale:rgba(196,149,42,0.08); --gold-border:rgba(196,149,42,0.22);
+    --text:#243044; --text-mid:#4E5E72; --text-muted:#7A8899;
+    --white:#FFFFFF; --border:rgba(0,0,0,0.07);
+    --sh-lg:0 20px 60px rgba(26,43,69,0.13);
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;line-height:1.75;overflow-x:hidden;}
+  h1,h2,h3,h4,h5,h6{font-family:'Cormorant Garamond',serif;color:var(--navy);line-height:1.15;margin-bottom:0;}
+  img{max-width:100%;}
 
-  <title>Contact Us | TRITECH Engineers</title>
+  /* NAVBAR */
+  .tt-nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(253,252,248,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gold-border);transition:box-shadow 0.4s;}
+  .tt-nav .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+  .tt-nav .logo img{height:44px;display:block;}
+  .tt-nav .nav-links{display:flex;align-items:center;}
+  .tt-nav .nav-links a{font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-mid);text-decoration:none;padding:4px 0;margin:0 20px;position:relative;transition:color 0.3s;}
+  .tt-nav .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width 0.35s;}
+  .tt-nav .nav-links a:hover,.tt-nav .nav-links a.active{color:var(--gold);}
+  .tt-nav .nav-links a:hover::after,.tt-nav .nav-links a.active::after{width:100%;}
+  .mob-btn{display:none;background:none;border:1px solid var(--gold-border);padding:8px 13px;color:var(--navy);cursor:pointer;font-size:1.05rem;line-height:1;}
+  @media(max-width:991px){.tt-nav .nav-links{display:none;}.mob-btn{display:block;}}
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  /* PAGE HERO */
+  .page-hero{position:relative;padding:160px 0 90px;background:linear-gradient(140deg,#FDFCF8 0%,#F4F0E6 55%,#EDE8DC 100%);overflow:hidden;}
+  .page-hero-gear{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:480px;opacity:0.055;pointer-events:none;}
+  .page-hero-content{position:relative;z-index:2;}
+  .pg-eyebrow{display:inline-flex;align-items:center;gap:14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .pg-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+  .pg-title{font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;color:var(--navy);margin-bottom:20px;}
+  .breadcrumb-row{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);font-family:'Plus Jakarta Sans',sans-serif;}
+  .breadcrumb-row a{color:var(--text-muted);text-decoration:none;transition:color 0.3s;}
+  .breadcrumb-row a:hover{color:var(--gold);}
+  .breadcrumb-row span{color:var(--gold-border);}
+  .breadcrumb-row .current{color:var(--gold);}
 
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  /* SECTIONS */
+  .tt-sec{padding:110px 0;}
+  .tt-sec-alt{background:var(--bg-alt);}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  /* CONTACT INFO CARDS */
+  .cinfo-card{
+    background:var(--white);border:1px solid var(--border);
+    border-top:3px solid transparent;padding:36px 30px;
+    height:100%;transition:all 0.4s ease;
+    display:flex;flex-direction:column;
+  }
+  .cinfo-card:hover{border-top-color:var(--gold);box-shadow:var(--sh-lg);transform:translateY(-5px);}
+  .cinfo-icon{width:52px;height:52px;background:var(--gold-pale);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem;margin-bottom:22px;flex-shrink:0;}
+  .cinfo-card h4{font-size:1.25rem;font-weight:700;margin-bottom:12px;}
+  .cinfo-card p,.cinfo-card a{font-size:0.93rem;color:var(--text-mid);line-height:1.7;margin:0;text-decoration:none;display:block;}
+  .cinfo-card a:hover{color:var(--gold);}
+  .cinfo-card .hours{margin-top:10px;padding-top:10px;border-top:1px solid var(--border);}
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  /* CONTACT FORM */
+  .contact-form-wrap{background:var(--white);border:1px solid var(--border);padding:50px 44px;}
+  @media(max-width:768px){.contact-form-wrap{padding:32px 24px;}}
+  .form-group{margin-bottom:24px;}
+  .form-label{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;}
+  .form-label .req{color:var(--gold);}
+  .form-control-lux{
+    width:100%;padding:14px 18px;
+    background:var(--bg);
+    border:1px solid rgba(0,0,0,0.1);
+    border-bottom:2px solid rgba(0,0,0,0.1);
+    outline:none;
+    font-family:'Plus Jakarta Sans',sans-serif;
+    font-size:0.95rem;color:var(--text);
+    transition:border-color 0.3s,background 0.3s;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+  .form-control-lux:focus{border-color:var(--gold);border-bottom-color:var(--gold);background:var(--white);}
+  .form-control-lux::placeholder{color:var(--text-muted);}
+  textarea.form-control-lux{resize:vertical;min-height:140px;}
+  select.form-control-lux{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A8899' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:12px;padding-right:44px;}
+  .btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#fff;border:none;padding:15px 40px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;transition:all 0.3s ease;cursor:pointer;}
+  .btn-gold:hover{background:var(--gold-deep);color:#fff;text-decoration:none;transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,149,42,0.35);}
+  .form-note{font-size:12px;color:var(--text-muted);margin-top:14px;}
 
-<!-- PREMIUM MODERN AESTHETIC OVERRIDE -->
-<style id="premium-modern-aesthetic">
-/* Import Modern Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
+  /* CONTACT SIDEBAR INFO */
+  .sidebar-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:12px;}
+  .sidebar-subtitle{font-size:0.95rem;color:var(--text-mid);line-height:1.8;margin-bottom:36px;}
+  .contact-detail{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border);}
+  .contact-detail:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+  .cd-icon{width:44px;height:44px;background:var(--gold-pale);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem;flex-shrink:0;}
+  .cd-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:4px;}
+  .cd-value{font-size:0.95rem;color:var(--text);font-weight:500;}
+  .cd-value a{color:var(--text);text-decoration:none;transition:color 0.3s;}
+  .cd-value a:hover{color:var(--gold);}
 
-body, p, a, div, span, li, button {
-  font-family: 'Inter', sans-serif !important;
-}
+  /* HOURS TABLE */
+  .hours-table{border:1px solid var(--border);margin-top:28px;}
+  .ht-row{display:flex;align-items:center;border-bottom:1px solid var(--border);padding:12px 18px;font-size:13px;}
+  .ht-row:last-child{border-bottom:none;}
+  .ht-day{flex:1;font-weight:600;color:var(--navy);font-family:'Plus Jakarta Sans',sans-serif;}
+  .ht-time{color:var(--text-mid);font-family:'Plus Jakarta Sans',sans-serif;}
+  .ht-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;margin-left:10px;}
+  .ht-dot.off{background:#e5e7eb;}
 
-h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-title {
-  font-family: 'Outfit', sans-serif !important;
-  letter-spacing: -0.5px !important;
-}
+  /* MAP */
+  .map-wrap{
+    position:relative;overflow:hidden;
+    border:1px solid var(--border);
+    height:380px;
+  }
+  .map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(20%) contrast(1.05);}
 
-/* Fixed Glass Navbar */
-.glass-nav {
-  position: fixed;
-  top: 0; width: 100%; z-index: 1000;
-  background: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
-  transition: all 0.3s ease !important;
-  padding: 15px 0 !important;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02) !important;
-}
-.glass-nav .nav-link {
-  color: #0f172a !important;
-  font-weight: 500 !important;
-  margin: 0 15px !important;
-  position: relative !important;
-  transition: 0.3s ease !important;
-}
-.glass-nav .nav-link:hover {
-  color: #d97706 !important;
-  transform: translateY(-2px) !important;
-}
+  /* WHATSAPP CTA */
+  .wa-strip{
+    background:var(--navy);padding:56px 0;
+    text-align:center;
+  }
+  .wa-strip h3{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:#fff;margin-bottom:12px;}
+  .wa-strip p{color:rgba(255,255,255,0.6);max-width:440px;margin:0 auto 28px;font-size:0.95rem;}
+  .btn-whatsapp{display:inline-flex;align-items:center;gap:12px;background:#25D366;color:#fff;border:none;padding:14px 36px;font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s ease;}
+  .btn-whatsapp:hover{background:#1aad52;color:#fff;text-decoration:none;transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,0.35);}
 
-/* Standardize backgrounds if page feels too legacy */
-.sub_page {
-    background-color: #f1f5f9 !important;
-}
-</style>
-
-  <link rel="stylesheet" href="css/theme.css" />
+  /* FOOTER */
+  .tt-foot{background:var(--navy);color:rgba(255,255,255,0.58);padding:72px 0 30px;}
+  .tt-foot .flogo{height:40px;filter:brightness(0) invert(1);opacity:0.9;display:block;margin-bottom:20px;}
+  .tt-foot p.fdesc{font-size:13.5px;line-height:1.75;color:rgba(255,255,255,0.52);max-width:300px;margin:0;}
+  .tt-foot h5{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:0.5px;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid rgba(196,149,42,0.25);display:block;}
+  .flink{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.52);text-decoration:none;font-size:13px;font-weight:500;margin-bottom:11px;transition:color 0.3s,gap 0.3s;font-family:'Plus Jakarta Sans',sans-serif;}
+  .flink::before{content:'';display:block;width:5px;height:1px;background:var(--gold);transition:width 0.3s;flex-shrink:0;}
+  .flink:hover{color:var(--gold);text-decoration:none;gap:14px;}
+  .flink:hover::before{width:12px;}
+  .fcontact{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;color:rgba(255,255,255,0.52);font-size:13px;text-decoration:none;transition:color 0.3s;font-family:'Plus Jakarta Sans',sans-serif;}
+  .fcontact:hover{color:var(--gold);text-decoration:none;}
+  .fcontact .ico{width:28px;height:28px;background:rgba(196,149,42,0.12);border:1px solid rgba(196,149,42,0.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;flex-shrink:0;margin-top:1px;}
+  .fsocial{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.5);font-size:13px;text-decoration:none;transition:all 0.3s;margin-right:8px;}
+  .fsocial:hover{background:var(--gold);border-color:var(--gold);color:#fff;text-decoration:none;}
+  .fbot{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;margin-top:50px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .fbot p{font-size:12px;color:rgba(255,255,255,0.32);margin:0;max-width:none;}
+  </style>
 </head>
+<body>
 
-<body class="sub_page">
-
-  <!-- Floating Nav -->
-  <nav class="glass-nav">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html">
-        <img src="images/logo2.png" alt="Tritech" style="height: 45px;">
-      </a>
-      <div class="d-none d-lg-flex" style="display: flex;">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About Us</a>
-        <a href="products.html" class="nav-link">Products</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
+<!-- NAVBAR -->
+<nav class="tt-nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><img src="images/logo2.png" alt="Tritech Marketing"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html" class="active">Contact Us</a>
       </div>
-      <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode"><i class="fas fa-moon"></i><i class="fas fa-sun"></i></button>
-      <button class="btn d-lg-none" style="color:#0f172a;"><i class="fa fa-bars" style="font-size: 1.5rem;"></i></button>
+      <button class="mob-btn"><i class="fas fa-bars"></i></button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-
-  <!-- Contact Section -->
-  <section style="background: transparent; padding-top: 120px; padding-bottom: 40px;">
-    <div class="container">
-      <!-- Title -->
-      <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 32px; font-weight: 800; color: #0f172a; font-family: 'Outfit', sans-serif; margin-bottom: 10px;">Get In Touch</h2>
-        <p style="color: #64748b; font-size: 15px; max-width: 500px; margin: 0 auto;">We'd love to hear from you. Reach out via any channel below.</p>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <svg class="page-hero-gear" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="200" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+    <circle cx="250" cy="250" r="160" fill="none" stroke="#C4952A" stroke-width="0.8" stroke-dasharray="8,6"/>
+    <circle cx="250" cy="250" r="110" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+    <path d="M250,250 Q244,194 250,140" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q296,224 342,200" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q306,250 360,250" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q296,276 342,300" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q256,306 250,360" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q204,276 158,300" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q194,250 140,250" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <path d="M250,250 Q204,224 158,200" fill="none" stroke="#C4952A" stroke-width="1.2"/>
+    <circle cx="250" cy="250" r="32" fill="none" stroke="#C4952A" stroke-width="1.8"/>
+    <circle cx="250" cy="250" r="14" fill="none" stroke="#C4952A" stroke-width="1"/>
+    <circle cx="250" cy="250" r="5" fill="#C4952A" opacity="0.6"/>
+    <path d="M 20,60 L 20,20 L 60,20" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+    <path d="M 440,20 L 480,20 L 480,60" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+    <path d="M 20,440 L 20,480 L 60,480" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+    <path d="M 480,440 L 480,480 L 440,480" fill="none" stroke="#C4952A" stroke-width="1.5"/>
+  </svg>
+  <div class="container">
+    <div class="page-hero-content">
+      <div class="pg-eyebrow">Tritech Marketing</div>
+      <h1 class="pg-title">Contact Us</h1>
+      <div class="breadcrumb-row">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Contact Us</span>
       </div>
-      
-      <div class="row" style="gap: 0;">
-        <!-- Left: Company Details -->
-        <div class="col-lg-4 col-md-12 mb-4">
-          <!-- Address Card -->
-          <div style="background: #ffffff; border-radius: 14px; padding: 22px; border: 1px solid #f1f5f9; margin-bottom: 12px;">
-            <div style="display: flex; align-items: flex-start; gap: 14px;">
-              <div style="width: 38px; height: 38px; background: rgba(217,119,6,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="fas fa-map-marker-alt" style="color: #d97706; font-size: 15px;"></i>
-              </div>
-              <div>
-                <h6 style="font-size: 14px; font-weight: 700; color: #0f172a; margin: 0 0 6px;">TRITECH Marketing Int. (Pvt) Ltd</h6>
-                <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">No. 87, Sawsiri Road,<br>Sapugaskanda, Kiribathgoda,<br>Sri Lanka — 11640</p>
-              </div>
-            </div>
-          </div>
+    </div>
+  </div>
+</section>
 
-          <!-- Contact Chips -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
-            <a href="tel:+94770109746" style="background: #ffffff; border-radius: 14px; padding: 18px; border: 1px solid #f1f5f9; text-decoration: none; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-              <i class="fas fa-phone-alt" style="color: #d97706; font-size: 16px; display: block; margin-bottom: 8px;"></i>
-              <span style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 3px;">Call Us</span>
-              <span style="font-size: 13px; color: #0f172a; font-weight: 600;">+94 770109746</span>
-            </a>
-            <a href="mailto:sales.mkt@tritech.lk" style="background: #ffffff; border-radius: 14px; padding: 18px; border: 1px solid #f1f5f9; text-decoration: none; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.04)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-              <i class="fas fa-envelope" style="color: #d97706; font-size: 16px; display: block; margin-bottom: 8px;"></i>
-              <span style="font-size: 11px; color: #94a3b8; display: block; margin-bottom: 3px;">Email</span>
-              <span style="font-size: 13px; color: #0f172a; font-weight: 600;">sales.mkt@tritech.lk</span>
-            </a>
-          </div>
-
-          <!-- WhatsApp CTA -->
-          <a href="https://wa.me/94770109746" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: #ffffff; padding: 14px; border-radius: 14px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(37,211,102,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-            <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Chat on WhatsApp
+<!-- CONTACT INFO CARDS -->
+<section style="background:var(--bg-alt);padding:70px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="cinfo-card h-100">
+          <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h4>Our Office</h4>
+          <p>No. 87, Sawsiri Road,<br>Sapugaskanda, Kiribathgoda,<br>Sri Lanka — 11640</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="140">
+        <div class="cinfo-card h-100">
+          <div class="cinfo-icon"><i class="fas fa-phone-alt"></i></div>
+          <h4>Phone</h4>
+          <a href="tel:+94770109746">+94 770 109 746</a>
+          <a href="tel:+94112912345" style="margin-top:6px;">+94 112 912 345</a>
+          <p class="hours" style="font-size:12px;color:var(--text-muted);">Mon–Fri: 8:30AM – 5:30PM<br>Sat: 8:30AM – 1:30PM</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="220">
+        <div class="cinfo-card h-100">
+          <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+          <h4>Email</h4>
+          <a href="mailto:sales.mkt@tritech.lk">sales.mkt@tritech.lk</a>
+          <a href="mailto:info@tritech.lk" style="margin-top:6px;">info@tritech.lk</a>
+          <p class="hours" style="font-size:12px;color:var(--text-muted);">We respond within<br>1 business day</p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="cinfo-card h-100">
+          <div class="cinfo-icon"><i class="fab fa-whatsapp"></i></div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/94770109746">+94 770 109 746</a>
+          <p class="hours" style="font-size:12px;color:var(--text-muted);">Available for quick queries<br>and product inquiries</p>
+          <a href="https://wa.me/94770109746" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:#25D366;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;padding:8px 16px;">
+            <i class="fab fa-whatsapp"></i> Chat Now
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <!-- Business Hours -->
-          <div style="background: #ffffff; border-radius: 14px; padding: 18px; border: 1px solid #f1f5f9; margin-top: 12px;">
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-              <i class="fas fa-clock" style="color: #d97706; font-size: 14px;"></i>
-              <span style="font-size: 13px; font-weight: 700; color: #0f172a;">Business Hours</span>
+<!-- FORM + SIDEBAR -->
+<section class="tt-sec">
+  <div class="container">
+    <div class="row">
+
+      <!-- FORM -->
+      <div class="col-lg-7 mb-5 mb-lg-0" data-aos="fade-right">
+        <div class="contact-form-wrap">
+          <span style="display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Send a Message</span>
+          <h2 style="font-size:2.2rem;font-weight:700;color:var(--navy);margin-bottom:8px;">Get In Touch</h2>
+          <p style="font-size:0.95rem;color:var(--text-mid);margin-bottom:36px;line-height:1.75;">Fill in the form and our team will respond within one business day.</p>
+
+          <form id="contactForm" action="https://formsubmit.co/sales.mkt@tritech.lk" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thank-you.html">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Full Name <span class="req">*</span></label>
+                  <input type="text" name="name" class="form-control-lux" placeholder="Your full name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Email Address <span class="req">*</span></label>
+                  <input type="email" name="email" class="form-control-lux" placeholder="your@email.com" required>
+                </div>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748b; margin-bottom: 4px;">
-              <span>Mon — Fri</span><span style="font-weight: 600; color: #0f172a;">8:30 AM – 5:30 PM</span>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" name="phone" class="form-control-lux" placeholder="+94 7XX XXX XXX">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-label">Product Interest</label>
+                  <select name="product" class="form-control-lux">
+                    <option value="" disabled selected>Select a category</option>
+                    <option>Pumping Systems — SPERONI</option>
+                    <option>Pumping Systems — Calpeda</option>
+                    <option>Pumping Systems — TSURUMI</option>
+                    <option>Pumping Systems — Heng Long</option>
+                    <option>Pumping Systems — EVERGUSH</option>
+                    <option>Piping — PP-R Aquatherm</option>
+                    <option>Piping — HDPE Puhui</option>
+                    <option>Water Storage — GRP Tanks</option>
+                    <option>General Enquiry</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
-              <span>Saturday</span><span style="font-weight: 600; color: #0f172a;">8:30 AM – 1:30 PM</span>
+
+            <div class="form-group">
+              <label class="form-label">Project / Company</label>
+              <input type="text" name="company" class="form-control-lux" placeholder="Your company or project name">
             </div>
+
+            <div class="form-group">
+              <label class="form-label">Message <span class="req">*</span></label>
+              <textarea name="message" class="form-control-lux" placeholder="Please describe your requirements, project scale, and any specific questions…" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold">
+              Send Message <i class="fas fa-paper-plane"></i>
+            </button>
+            <p class="form-note"><i class="fas fa-lock" style="color:var(--gold);margin-right:6px;"></i>Your information is kept strictly confidential and will only be used to respond to your enquiry.</p>
+          </form>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-5 pl-lg-5" data-aos="fade-left">
+        <h3 class="sidebar-title">We're Here to Help</h3>
+        <p class="sidebar-subtitle">Our experienced engineering team is ready to answer any product or project questions and provide expert recommendations.</p>
+
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <span class="cd-label">Head Office</span>
+            <span class="cd-value">No. 87, Sawsiri Road, Sapugaskanda,<br>Kiribathgoda, Sri Lanka — 11640</span>
           </div>
         </div>
-
-        <!-- Right: Contact Form -->
-        <div class="col-lg-8 col-md-12 mb-4">
-          <div style="background: #ffffff; border-radius: 14px; padding: 30px; border: 1px solid #f1f5f9; height: 100%;">
-            <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 20px; font-family: 'Outfit', sans-serif;">Send us a message</h3>
-            <form action="#">
-              <div class="row">
-                <div class="col-md-6" style="margin-bottom: 14px;">
-                  <input type="text" placeholder="Your name" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: 'Inter'; font-size: 14px; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='#d97706'" onblur="this.style.borderColor='#e2e8f0'" required />
-                </div>
-                <div class="col-md-6" style="margin-bottom: 14px;">
-                  <input type="email" placeholder="Email address" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: 'Inter'; font-size: 14px; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='#d97706'" onblur="this.style.borderColor='#e2e8f0'" required />
-                </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <span class="cd-label">Telephone</span>
+            <span class="cd-value">
+              <a href="tel:+94770109746">+94 770 109 746</a><br>
+              <a href="tel:+94112912345">+94 112 912 345</a>
+            </span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <span class="cd-label">Email</span>
+            <span class="cd-value">
+              <a href="mailto:sales.mkt@tritech.lk">sales.mkt@tritech.lk</a><br>
+              <a href="mailto:info@tritech.lk">info@tritech.lk</a>
+            </span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <span class="cd-label">Business Hours</span>
+            <div class="hours-table" style="margin-top:8px;width:100%;">
+              <div class="ht-row">
+                <span class="ht-day">Monday – Friday</span>
+                <span class="ht-time">8:30 AM – 5:30 PM</span>
+                <div class="ht-dot"></div>
               </div>
-              <div style="margin-bottom: 14px;">
-                <input type="text" placeholder="Subject" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: 'Inter'; font-size: 14px; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='#d97706'" onblur="this.style.borderColor='#e2e8f0'" />
+              <div class="ht-row">
+                <span class="ht-day">Saturday</span>
+                <span class="ht-time">8:30 AM – 1:30 PM</span>
+                <div class="ht-dot"></div>
               </div>
-              <div style="margin-bottom: 20px;">
-                <textarea placeholder="Your message..." rows="5" style="width: 100%; padding: 12px 16px; border-radius: 10px; border: 1px solid #e2e8f0; background: #f8fafc; font-family: 'Inter'; font-size: 14px; resize: vertical; outline: none; transition: border 0.3s;" onfocus="this.style.borderColor='#d97706'" onblur="this.style.borderColor='#e2e8f0'" required></textarea>
+              <div class="ht-row">
+                <span class="ht-day">Sunday / Public Holiday</span>
+                <span class="ht-time">Closed</span>
+                <div class="ht-dot off"></div>
               </div>
-              <button type="submit" style="background: #d97706; color: #ffffff; border: none; padding: 12px 30px; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(217,119,6,0.15);" onmouseover="this.style.background='#b45309'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#d97706'; this.style.transform='translateY(0)'">
-                Send Message <i class="fas fa-paper-plane" style="margin-left: 6px;"></i>
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Google Map - Compact -->
-      <div style="border-radius: 14px; overflow: hidden; border: 1px solid #f1f5f9; height: 220px;">
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div data-aos="fade-up">
+  <div class="map-wrap">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15841.115127949264!2d79.9451374!3d6.9763978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae257dcfbb2f773%3A0x63e77eb18ffa3ad6!2sTritech%20Engineers%20(Pvt)%20Ltd!5e0!3m2!1sen!2slk!4v1743288248373!5m2!1sen!2slk" 
           width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-      </div>
-    </div>
-  </section>
+  </div>
+</div>
 
-  <!-- footer section -->
-<footer class="footer_section" style="background: #ffffff; color: #0f172a; padding: 60px 0 20px; font-family: 'Inter', sans-serif; border-top: 1px solid #e2e8f0; position: relative; overflow: hidden;">
-  <!-- Subtle ambient decoration -->
-  <div style="position: absolute; top: -80px; right: -80px; width: 250px; height: 250px; background: radial-gradient(circle, rgba(217,119,6,0.06) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-  <div style="position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(59,130,246,0.04) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+<!-- WHATSAPP CTA -->
+<div class="wa-strip" data-aos="fade-up">
+  <div class="container">
+    <h3>Prefer to Chat on WhatsApp?</h3>
+    <p>Get a quick response from our team — available during business hours for product enquiries and technical questions.</p>
+    <a href="https://wa.me/94770109746" target="_blank" class="btn-whatsapp">
+      <i class="fab fa-whatsapp fa-lg"></i> Chat on WhatsApp
+    </a>
+  </div>
+</div>
 
-  <div class="container" style="position: relative; z-index: 2;">
-    <div class="row mb-4">
-      <!-- Left: Brand -->
-      <div class="col-lg-4 mb-4 mb-lg-0">
-        <a href="index.html" style="display: inline-block; margin-bottom: 18px; text-decoration: none;">
-          <img src="images/logo2.png" alt="TRITECH" style="height: 45px;">
-        </a>
-        <p style="color: #64748b; font-size: 14px; line-height: 1.7; max-width: 300px;">
-          One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing & Environmental solutions.
-        </p>
-      </div>
-
-      <!-- Middle: Quick Links -->
-      <div class="col-lg-4 mb-4 mb-lg-0">
-        <h5 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 22px; display: flex; align-items: center; gap: 10px;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(217,119,6,0.1); border-radius: 8px;">
-            <i class="fas fa-arrow-right" style="color: #d97706; font-size: 12px;"></i>
-          </span> Quick Links
-        </h5>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px 30px;">
-          <a href="index.html" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Home
-          </a>
-          <a href="about.html" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> About Us
-          </a>
-          <a href="products.html" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Products
-          </a>
-          <a href="contact.html" style="color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s ease; display: flex; align-items: center; gap: 8px;" onmouseover="this.style.color='#d97706'; this.style.transform='translateX(4px)'" onmouseout="this.style.color='#475569'; this.style.transform='translateX(0)'">
-            <span style="width: 5px; height: 5px; background: #d97706; border-radius: 50%; opacity: 0.5;"></span> Contact Us
-          </a>
+<!-- FOOTER -->
+<footer class="tt-foot">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <img src="images/logo2.png" alt="TRITECH" class="flogo">
+        <p class="fdesc">One of the leading engineering solution providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing &amp; Environmental solutions.</p>
+        <div style="margin-top:26px;">
+          <a href="#" class="fsocial"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="fsocial"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/94770109746" class="fsocial"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="fsocial"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-
-      <!-- Right: Location -->
-      <div class="col-lg-4">
-        <h5 style="font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 22px; display: flex; align-items: center; gap: 10px;">
-          <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: rgba(217,119,6,0.1); border-radius: 8px;">
-            <i class="fa fa-map-marker-alt" style="color: #d97706; font-size: 12px;"></i>
-          </span> Our Location
-        </h5>
-        <p style="color: #475569; font-size: 14px; line-height: 1.7; margin-bottom: 5px; font-weight: 600;">TRITECH Marketing Int. (Pvt) Ltd</p>
-        <p style="color: #64748b; font-size: 13px; line-height: 1.7; margin-bottom: 0;">
-          No. 87, Sawsiri Road,<br>
-          Sapugaskanda, Kiribathgoda,<br>
-          Sri Lanka &mdash; 11640
-        </p>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0 offset-lg-1">
+        <h5>Navigation</h5>
+        <a href="index.html" class="flink">Home</a>
+        <a href="about.html" class="flink">About Us</a>
+        <a href="products.html" class="flink">Products</a>
+        <a href="contact.html" class="flink">Contact Us</a>
       </div>
-    </div>
-
-    <!-- Bottom Ribbon -->
-    <div style="border-top: 1px solid #e2e8f0; padding-top: 22px; margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px;">
-      <!-- Contact Chips -->
-      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="mailto:sales.mkt@tritech.lk" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: #f8fafc; padding: 10px 18px; border-radius: 50px; border: 1px solid #f1f5f9; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <i class="fas fa-envelope" style="color: #d97706; font-size: 14px;"></i>
-          <span style="font-size: 13px; color: #0f172a; font-weight: 600;">sales.mkt@tritech.lk</span>
+      <div class="col-lg-2 col-md-4 mb-4 mb-lg-0">
+        <h5>Products</h5>
+        <a href="Pumping.html" class="flink">Pumping Systems</a>
+        <a href="Piping.html" class="flink">Piping Solutions</a>
+        <a href="WaterStorage.html" class="flink">Water Tanks</a>
+      </div>
+      <div class="col-lg-3 col-md-4">
+        <h5>Contact</h5>
+        <a class="fcontact" href="#">
+          <span class="ico"><i class="fas fa-map-marker-alt"></i></span>
+          <span>No. 87, Sawsiri Road, Sapugaskanda, Kiribathgoda, Sri Lanka — 11640</span>
         </a>
-        <a href="tel:+94770109746" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: #f8fafc; padding: 10px 18px; border-radius: 50px; border: 1px solid #f1f5f9; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.06)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-          <i class="fas fa-phone-alt" style="color: #d97706; font-size: 14px;"></i>
-          <span style="font-size: 13px; color: #0f172a; font-weight: 600;">+94 770109746</span>
+        <a class="fcontact" href="tel:+94770109746">
+          <span class="ico"><i class="fas fa-phone-alt"></i></span>
+          <span>+94 770 109 746</span>
+        </a>
+        <a class="fcontact" href="mailto:sales.mkt@tritech.lk">
+          <span class="ico"><i class="fas fa-envelope"></i></span>
+          <span>sales.mkt@tritech.lk</span>
         </a>
       </div>
-
-      <!-- Socials -->
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <span style="font-size: 13px; font-weight: 500; color: #94a3b8;">Follow us</span>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" style="width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 15px; transition: all 0.3s ease; text-decoration: none;" onmouseover="this.style.background='#d97706'; this.style.color='#ffffff'" onmouseout="this.style.background='#f1f5f9'; this.style.color='#475569'"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
-
-    <!-- Copyright -->
-    <p style="text-align: center; color: #cbd5e1; font-size: 12px; margin: 20px 0 0; letter-spacing: 0.5px;">&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+    <div class="fbot">
+      <p>&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+      <p>Excellence in Engineering Since 1999</p>
+    </div>
   </div>
 </footer>
-<!-- footer section -->
 
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
-  <!-- isotope js -->
-  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
-  <!-- nice select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 60, duration: 750 });
+  window.addEventListener('scroll', function() {
+    document.getElementById('mainNav').style.boxShadow =
+      window.scrollY > 30 ? '0 4px 24px rgba(26,43,69,0.1)' : 'none';
+  });
 
-  <style>
-    /* Animation Classes */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .animate-on-scroll.animated {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    /* Hover Effects */
-    .contact_info a:hover {
-      color: #FFD700 !important;
-      text-decoration: underline;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .contact_info, .map_container {
-        margin-bottom: 30px;
-      }
-      
-      .section_title {
-        font-size: 36px;
-      }
-      
-      .contact_section p {
-        font-size: 16px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .section_title {
-        font-size: 32px;
-      }
-      
-      .info_box {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .info_box i {
-        margin-bottom: 10px;
-      }
-    }
-  </style>
-
-  <script>
-    // Scroll Animation Trigger
-    document.addEventListener("DOMContentLoaded", function () {
-      const animateElements = document.querySelectorAll(".animate-on-scroll");
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animated");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      animateElements.forEach(element => {
-        observer.observe(element);
-      });
-      
-      // Update copyright year
-      document.getElementById("displayYear").innerHTML = new Date().getFullYear();
-    });
-  </script>
-
-  <script src="js/theme.js"></script>
+  // Form submit feedback
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    var btn = this.querySelector('.btn-gold');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+    btn.style.opacity = '0.8';
+  });
+</script>
 </body>
-
 </html>
