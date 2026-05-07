@@ -644,16 +644,23 @@
     @media (max-width: 768px) {
       /* Hero */
   .hero {
-    min-height: unset;
+    min-height: 100svh; /* fills the mobile viewport properly */
     height: auto;
     padding-top: 0;
-    padding-bottom: 40px;
+    padding-bottom: 0;
     align-items: flex-start;
   }
 
   .hero-content {
-    padding-top: 140px;
-    padding-bottom: 40px;
+    padding-top: 110px;  /* clears the fixed navbar */
+    padding-bottom: 56px;
+  }
+
+  /* make the absolute bg image always fill the hero height */
+  .hero > div:first-child,
+  .hero > div:first-child img {
+    height: 100%;
+    min-height: 100svh;
   }
       .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
       .hero-desc { font-size: 0.98rem; max-width: 100%; }
