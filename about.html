@@ -33,10 +33,8 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
 
-
 <!-- PREMIUM MODERN AESTHETIC OVERRIDE -->
 <style id="premium-modern-aesthetic">
-/* Import Modern Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap');
 
 body, p, a, div, span, li, button {
@@ -48,7 +46,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
   letter-spacing: -0.5px !important;
 }
 
-/* Fixed Glass Navbar */
 .glass-nav {
   position: fixed;
   top: 0; width: 100%; z-index: 1000;
@@ -72,19 +69,98 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
   transform: translateY(-2px) !important;
 }
 
-/* Standardize backgrounds if page feels too legacy */
 .sub_page {
     background-color: #f1f5f9 !important;
 }
 </style>
 
   <link rel="stylesheet" href="css/theme.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;700&display=swap');
+
+    /* SCROLL ANIMATION */
+    .scroll-effect {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    
+    .scroll-effect.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* HOVER EFFECTS */
+    .vision-box:hover, .mission-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .read-more-btn:hover {
+      background: transparent;
+      color: #0f172a;
+    }
+
+    /* FIX: Keep dots perfectly circular always */
+    .value-dot {
+      width: 10px;
+      height: 10px;
+      min-width: 10px;
+      min-height: 10px;
+      flex-shrink: 0;
+      background: #d97706;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: inline-block;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .col-md-8 {
+        width: 100%;
+      }
+
+      .detail-box {
+        margin-top: 30px;
+        padding: 30px;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+      
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      /* FIX: Stack values to one column and fix dot oval issue on mobile */
+      .values-list > div {
+        flex-basis: 100% !important;
+        width: 100% !important;
+        margin-bottom: 14px !important;
+      }
+
+      .values-list .value-item {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="sub_page">
 
-  
-    <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="tt-nav" id="mainNav">
     <div class="container">
       <div class="nav-inner">
@@ -105,7 +181,6 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
     <div class="bg-box" style="position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);">
       <img src="images/hero-bg.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.7;">
     </div>
-    
   </div>
 
   <!-- about section -->
@@ -128,7 +203,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
             border: 1px solid rgba(255, 255, 255, 0.3);">
             
             <div class="heading_container" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;">
-              <h2 style="font-size: 50px; font-weight: 800; color: #0f172a; font-family: 'Merriweather', serif;  letter-spacing: 2px; text-align: center;">
+              <h2 style="font-size: 50px; font-weight: 800; color: #0f172a; font-family: 'Merriweather', serif; letter-spacing: 2px; text-align: center;">
                 About Us
               </h2>
               <h3 style="font-size: 24px; font-weight: 600; color: #ffffff; margin-top: 15px;">
@@ -138,16 +213,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .elegant-heading, .service-tit
             <br>
             
             <p style="font-size: 18px; color: #ffffff; line-height: 1.8; margin-top: 20px; font-weight: 300;">
-            
-             Tritech Marketing International (Pvt) Ltd is a leading industry solution provider in Sri Lanka and a member of the Tritech Group of Companies. 
+              Tritech Marketing International (Pvt) Ltd is a leading industry solution provider in Sri Lanka and a member of the Tritech Group of Companies. 
             </p>
             <p style="font-size: 18px; color: #ffffff; line-height: 1.8; font-weight: 300;">
               We are the exclusive dealer for Speroni water pumps from Italy and also supply trusted brands such as Aquatherm, Heng Long, Evergush, Calpeda, Doori, and Puhui.
-
             </p>
             <p style="font-size: 18px; color: #ffffff; line-height: 1.8; font-weight: 300;">
               Our product range includes water pumps, PPR pipes, and GRP tanks, catering to industrial and MEP applications. 
-With a strong commitment to quality, reliability, and customer satisfaction, Tritech is your trusted partner for complete industrial solutions.
+              With a strong commitment to quality, reliability, and customer satisfaction, Tritech is your trusted partner for complete industrial solutions.
+            </p>
           </div>
         </div>
 
@@ -175,7 +249,7 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
             transition: transform 0.3s ease;
           ">
             <div style="display: flex; align-items: center; margin-bottom: 20px;">
-              <div style="width: 50px; height: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+              <div style="width: 50px; height: 50px; min-width: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
                 <i class="fa fa-eye" aria-hidden="true" style="color: #000; font-size: 20px;"></i>
               </div>
               <h3 style="font-size: 24px; font-weight: 600; color: #333; margin: 0;">
@@ -197,7 +271,7 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
             transition: transform 0.3s ease;
           ">
             <div style="display: flex; align-items: center; margin-bottom: 20px;">
-              <div style="width: 50px; height: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+              <div style="width: 50px; height: 50px; min-width: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
                 <i class="fa fa-bullseye" aria-hidden="true" style="color: #000; font-size: 20px;"></i>
               </div>
               <h3 style="font-size: 24px; font-weight: 600; color: #333; margin: 0;">
@@ -212,6 +286,8 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
           </div>
         </div>
       </div>
+
+      <!-- Values Box -->
       <div class="values-box" style="
         background: #fff;
         padding: 40px;
@@ -220,7 +296,7 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
         margin-top: 50px;
       ">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
-          <div style="width: 50px; height: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
+          <div style="width: 50px; height: 50px; min-width: 50px; background: #d97706; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px;">
             <i class="fa fa-star" aria-hidden="true" style="color: #000; font-size: 20px;"></i>
           </div>
           <h3 style="font-size: 24px; font-weight: 600; color: #333; margin: 0;">
@@ -228,42 +304,49 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
           </h3>
         </div>
         <div class="values-list" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Customer Focus</span>
             </div>
           </div>
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Leaning Culture</span>
             </div>
           </div>
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Ethical Business</span>
             </div>
           </div>
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Focus Care for People</span>
             </div>
           </div>
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Environment Transparency</span>
             </div>
           </div>
+
           <div style="flex-basis: 48%; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center;">
-              <div style="width: 10px; height: 10px; background: #d97706; border-radius: 50%; margin-right: 10px;"></div>
+            <div class="value-item" style="display: flex; align-items: center;">
+              <div class="value-dot"></div>
               <span style="font-size: 16px; color: #666;">Team Work</span>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -324,13 +407,11 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <!-- bootstrap js -->
   <script src="js/bootstrap.js"></script>
   <!-- owl slider -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- isotope js -->
   <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
   <!-- nice select -->
@@ -338,70 +419,12 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
   <!-- custom js -->
   <script src="js/custom.js"></script>
   <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
-  </script>
-  <!-- End Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;700&display=swap');
-
-    /* SCROLL ANIMATION */
-    .scroll-effect {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    
-    .scroll-effect.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* HOVER EFFECTS */
-    .vision-box:hover, .mission-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-
-    .read-more-btn:hover {
-      background: transparent;
-      color: #0f172a;
-    }
-
-    /* RESPONSIVE DESIGN */
-    @media (max-width: 768px) {
-      .row {
-        flex-direction: column;
-      }
-
-      .col-md-8 {
-        width: 100%;
-      }
-
-      .detail-box {
-        margin-top: 30px;
-        padding: 30px;
-      }
-
-      h2 {
-        font-size: 40px;
-      }
-      
-      h3 {
-        font-size: 20px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-      
-      .values-list div {
-        flex-basis: 100%;
-      }
-    }
-  </style>
+  <script src="js/theme.js"></script>
 
   <script>
+    // Scroll animation
     document.addEventListener("DOMContentLoaded", function () {
       let elements = document.querySelectorAll(".scroll-effect");
 
@@ -417,15 +440,8 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
 
       window.addEventListener("scroll", checkScroll);
       checkScroll();
-      
-      // Update copyright year
-      document.getElementById("displayYear").innerHTML = new Date().getFullYear();
     });
-  </script>
 
-  <script src="js/theme.js"></script>
-
-  <script>
     // Mobile menu toggle
     const mobBtn = document.getElementById('mobBtn');
     const navLinks = document.getElementById('navLinks');
@@ -448,6 +464,7 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
         mobBtn.querySelector('i').className = 'fas fa-bars';
       }
     });
+
     // Scroll shadow on navbar
     window.addEventListener('scroll', function() {
       const nav = document.getElementById('mainNav');
@@ -460,6 +477,6 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
       }
     });
   </script>
-</body>
 
+</body>
 </html>
