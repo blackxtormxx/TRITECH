@@ -643,33 +643,31 @@
     /* ── Mobile (≤ 768px) ── */
     @media (max-width: 768px) {
       /* Hero */
-  .hero {
+.hero {
     height: auto;
-    min-height: unset;  /* ← let content decide the height */
+    min-height: unset;
     padding-top: 0;
     padding-bottom: 0;
     align-items: flex-start;
   }
 
-  /* background fills exactly however tall the hero grows */
   .hero > div:first-child {
     height: 100% !important;
-    min-height: unset !important;  /* ← remove the 100svh cap */
+    min-height: unset !important;
   }
 
   .hero-content {
-    padding-top: 130px;   /* clears navbar */
-    padding-bottom: 60px; /* room for stats */
+    padding-top: 170px;   /* ← was 130px, navbar is taller than expected */
+    padding-bottom: 80px; /* ← room for 3 stats wrapping to 2 rows */
   }
-  
-  .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
-      .hero-desc { font-size: 0.98rem; max-width: 100%; }
-      .hero-ctas { gap: 12px; }
 
-      /* Stats — 2 per row */
-      .hero-stats { gap: 20px; }
-      .stat-item { flex-basis: calc(50% - 10px); }
-      .stat-num { font-size: 2.4rem; }
+  .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
+  .hero-desc { font-size: 0.98rem; max-width: 100%; }
+  .hero-ctas { gap: 12px; }
+  .hero-stats { gap: 20px; }
+  .stat-item { flex-basis: calc(50% - 10px); }
+  .stat-num { font-size: 2.4rem; }
+
 
       /* Services bento → 1 col */
       .bento-grid { grid-template-columns: 1fr; gap: 16px; }
