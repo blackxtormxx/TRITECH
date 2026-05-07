@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
 
   <style>
     /* ─── CSS Variables ─── */
@@ -43,108 +44,7 @@
 
     img { max-width: 100%; }
 
-    /* ═══════════════════════════════════════
-       NAVBAR
-    ═══════════════════════════════════════ */
-    .tt-nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-    }
-
-    .logo img {
-      height: 42px;
-      display: block;
-    }
-
-    /* Desktop links */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-links a {
-      color: var(--text-main);
-      font-weight: 500;
-      font-size: 14px;
-      text-decoration: none;
-      padding: 8px 16px;
-      border-radius: 30px;
-      transition: all 0.25s ease;
-      letter-spacing: 0.2px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-      background: rgba(217,119,6,0.08);
-    }
-
-    /* Hamburger button */
-    .mob-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      color: var(--text-main);
-      font-size: 20px;
-      border-radius: 10px;
-      transition: background 0.2s;
-      line-height: 1;
-    }
-
-    .mob-btn:hover { background: rgba(0,0,0,0.05); }
-
-    /* ─── Mobile Nav Drawer ─── */
-    @media (max-width: 768px) {
-      .mob-btn { display: flex; align-items: center; justify-content: center; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background: rgba(255,255,255,0.98);
-        backdrop-filter: blur(20px);
-        padding: 16px 20px 24px;
-        gap: 4px;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-        animation: slideDown 0.25s ease;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links a {
-        width: 100%;
-        padding: 12px 18px;
-        font-size: 15px;
-        border-radius: 12px;
-      }
-
-      @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to   { opacity: 1; transform: translateY(0); }
-      }
-    }
+    /* Navbar handled by theme.css */
 
     /* ═══════════════════════════════════════
        HERO
@@ -160,7 +60,7 @@
     .hero-bg-accent {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.78) 45%, rgba(255,255,255,0.18) 100%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.50) 45%, rgba(255,255,255,0.08) 100%);
       z-index: 1;
     }
 
@@ -490,6 +390,7 @@
 
     .premium-img-box img {
       transition: transform 0.5s ease;
+      mix-blend-mode: multiply;
     }
 
     .premium-details {
@@ -829,20 +730,9 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
-    <!-- Background Carousel -->
-    <div id="heroCarousel" class="carousel slide carousel-fade position-absolute w-100 h-100"
-      data-ride="carousel" data-interval="4000" style="top:0;left:0;z-index:0;">
-      <div class="carousel-inner h-100">
-        <div class="carousel-item active h-100">
-          <img src="images/10.png" class="d-block w-100 h-100" style="object-fit:cover;" alt="Slide 1">
-        </div>
-        <div class="carousel-item h-100">
-          <img src="images/hero-bg.jpg" class="d-block w-100 h-100" style="object-fit:cover;filter:saturate(1.2);" alt="Slide 2">
-        </div>
-        <div class="carousel-item h-100">
-          <img src="images/o2.jpg" class="d-block w-100 h-100" style="object-fit:cover;filter:saturate(1.2);" alt="Slide 3">
-        </div>
-      </div>
+    <!-- Static Background Image -->
+    <div style="position:absolute;inset:0;z-index:0;">
+      <img src="images/10.png" class="d-block w-100 h-100" style="object-fit:cover;" alt="Hero background">
     </div>
     <div class="hero-bg-accent"></div>
 
@@ -934,12 +824,12 @@
           <h3>Piping &amp; Plumbing</h3>
           <p>Advanced engineering plastic piping networks.</p>
         </a>
-        <a href="Pumping.html" class="prod-dir-card" data-aos="fade-up" data-aos-delay="175">
+        <a href="#pump-section" class="prod-dir-card" data-aos="fade-up" data-aos-delay="175">
           <img class="prod-category-img" src="images/dir_pumps.png" alt="Pumps">
           <h3>Pumping Systems</h3>
           <p>Unmatched fluid dynamic motor systems.</p>
         </a>
-        <a href="WaterStorage.html" class="prod-dir-card" data-aos="fade-up" data-aos-delay="250">
+        <a href="#water-storage-section" class="prod-dir-card" data-aos="fade-up" data-aos-delay="250">
           <img class="prod-category-img" src="images/dir_tanks.png" alt="Water Tanks">
           <h3>Water Storage Tanks</h3>
           <p>Heavy-duty GRP and modular water storage.</p>
@@ -990,6 +880,7 @@
       </div>
 
       <!-- Pumps -->
+      <div id="pump-section" style="padding-top:100px;margin-top:-100px;"></div>
       <div class="section-header" data-aos="fade-up">
         <h2>Pump System</h2>
         <div class="accent-line"></div>
@@ -1058,6 +949,7 @@
       </div>
 
       <!-- Tanks -->
+      <div id="water-storage-section" style="padding-top:100px;margin-top:-100px;"></div>
       <div class="section-header" data-aos="fade-up">
         <h2>Water Storage Solutions</h2>
         <div class="accent-line"></div>
@@ -1081,75 +973,52 @@
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="footer_section">
-    <!-- Decorative blobs -->
+  <footer class="tt-foot">
     <div style="position:absolute;top:-80px;right:-80px;width:250px;height:250px;background:radial-gradient(circle,rgba(217,119,6,0.06) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
     <div style="position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(59,130,246,0.04) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-
     <div class="container" style="position:relative;z-index:2;">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div class="footer-brand">
-          <a href="index.html" style="text-decoration:none;">
-            <img src="images/logo2.png" alt="TRITECH">
+      <div class="row mb-4">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <a href="index.html" style="display:inline-block;margin-bottom:18px;text-decoration:none;">
+            <img src="images/logo2.png" alt="TRITECH" class="flogo">
           </a>
-          <p>One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing &amp; Environmental solutions.</p>
-        </div>
-
-        <!-- Quick Links -->
-        <div>
-          <div class="footer-col-title">
-            <span class="icon-badge"><i class="fas fa-arrow-right" style="color:#d97706;font-size:11px;"></i></span>
-            Quick Links
-          </div>
-          <div class="footer-links-grid">
-            <a href="index.html"><span class="dot"></span> Home</a>
-            <a href="about/"><span class="dot"></span> About Us</a>
-            <a href="products/"><span class="dot"></span> Products</a>
-            <a href="contact/"><span class="dot"></span> Contact Us</a>
+          <p class="fdesc">One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing &amp; Environmental solutions.</p>
+          <div style="margin-top:22px;">
+            <a href="#" class="fsocial"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="fsocial"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/94770109746" class="fsocial"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="fsocial"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
-
-        <!-- Location -->
-        <div class="footer-location">
-          <div class="footer-col-title">
-            <span class="icon-badge"><i class="fa fa-map-marker-alt" style="color:#d97706;font-size:11px;"></i></span>
-            Our Location
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h5><span class="hico"><i class="fas fa-arrow-right"></i></span> Quick Links</h5>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;">
+            <a href="index.html" class="flink">Home</a>
+            <a href="about/" class="flink">About Us</a>
+            <a href="products/" class="flink">Products</a>
+            <a href="contact/" class="flink">Contact Us</a>
           </div>
-          <p class="company-name">TRITECH Marketing Int. (Pvt) Ltd</p>
-          <p>
-            No. 87, Sawsiri Road,<br>
-            Sapugaskanda, Kiribathgoda,<br>
-            Sri Lanka &mdash; 11640
-          </p>
         </div>
-
-      </div>
-
-      <!-- Bottom ribbon -->
-      <div class="footer-bottom">
-        <div class="footer-contacts">
-          <a href="mailto:sales.mkt@tritech.lk" class="contact-chip">
-            <i class="fas fa-envelope"></i>
+        <div class="col-lg-4">
+          <h5><span class="hico"><i class="fa fa-map-marker-alt"></i></span> Our Location</h5>
+          <a class="fcontact" href="#">
+            <span class="ico"><i class="fas fa-map-marker-alt"></i></span>
+            <span>No. 87, Sawsiri Road, Sapugaskanda, Kiribathgoda, Sri Lanka &mdash; 11640</span>
+          </a>
+          <a class="fcontact" href="tel:+94770109746">
+            <span class="ico"><i class="fas fa-phone-alt"></i></span>
+            <span>+94 770 109 746</span>
+          </a>
+          <a class="fcontact" href="mailto:sales.mkt@tritech.lk">
+            <span class="ico"><i class="fas fa-envelope"></i></span>
             <span>sales.mkt@tritech.lk</span>
           </a>
-          <a href="tel:+94770109746" class="contact-chip">
-            <i class="fas fa-phone-alt"></i>
-            <span>+94 770109746</span>
-          </a>
-        </div>
-
-        <div class="footer-socials">
-          <span>Follow us</span>
-          <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-
-      <p class="footer-copy">&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+      <div class="fbot">
+        <p>&copy; 2026 TRITECH Marketing Int. (Pvt) Ltd. All rights reserved.</p>
+        <p>Excellence in Engineering Since 1999</p>
+      </div>
     </div>
   </footer>
 
@@ -1167,7 +1036,7 @@
     const mobIcon  = document.getElementById('mobIcon');
 
     mobBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.toggle('mob-open');
       mobBtn.setAttribute('aria-expanded', isOpen);
       mobIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
@@ -1175,7 +1044,7 @@
     // Close menu when a nav link is clicked
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
+        navLinks.classList.remove('mob-open');
         mobBtn.setAttribute('aria-expanded', 'false');
         mobIcon.className = 'fas fa-bars';
       });
@@ -1184,7 +1053,7 @@
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove('open');
+        navLinks.classList.remove('mob-open');
         mobBtn.setAttribute('aria-expanded', 'false');
         mobIcon.className = 'fas fa-bars';
       }
