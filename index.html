@@ -1040,64 +1040,54 @@
   </footer>
 
   <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ once: true, offset: 50, disable: 'mobile' });
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // ── AOS Init ──
+    AOS.init({ once: true, offset: 50});
 
-  // ── Fix hero padding to always clear navbar ──
-  function fixHeroPadding() {
-    const nav = document.getElementById('mainNav');
-    const heroContent = document.querySelector('.hero-content');
-    if (window.innerWidth <= 768) {
-      const navH = nav.offsetHeight;
-      heroContent.style.paddingTop = (navH + 16) + 'px';
-      heroContent.style.paddingBottom = '100px';
-    } else {
-      heroContent.style.paddingTop = '';
-      heroContent.style.paddingBottom = '';
-    }
-  }
-  fixHeroPadding();
-  window.addEventListener('resize', fixHeroPadding);
+    // ── Mobile Nav Toggle ──
+    const mobBtn  = document.getElementById('mobBtn');
+    const navLinks = document.getElementById('navLinks');
+    const mobIcon  = document.getElementById('mobIcon');
 
-  // ── Mobile Nav Toggle ──
-  const mobBtn = document.getElementById('mobBtn');
-  const navLinks = document.getElementById('navLinks');
-  const mobIcon = document.getElementById('mobIcon');
-  mobBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('mob-open');
-    mobBtn.setAttribute('aria-expanded', isOpen);
-    mobIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('mob-open');
-      mobBtn.setAttribute('aria-expanded', 'false');
-      mobIcon.className = 'fas fa-bars';
+    mobBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('mob-open');
+      mobBtn.setAttribute('aria-expanded', isOpen);
+      mobIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
-  });
-  document.addEventListener('click', (e) => {
-    if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('mob-open');
-      mobBtn.setAttribute('aria-expanded', 'false');
-      mobIcon.className = 'fas fa-bars';
-    }
-  });
 
-  // ── Navbar scroll shadow ──
-  window.addEventListener('scroll', () => {
-    const nav = document.getElementById('mainNav');
-    if (window.scrollY > 20) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
-      nav.style.background = 'rgba(255,255,255,0.97)';
-    } else {
-      nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
-      nav.style.background = 'rgba(255,255,255,0.92)';
-    }
-  });
-</script>
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobIcon.className = 'fas fa-bars';
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobIcon.className = 'fas fa-bars';
+      }
+    });
+
+    // ── Navbar scroll shadow ──
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 20) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+        nav.style.background = 'rgba(255,255,255,0.97)';
+      } else {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
+        nav.style.background = 'rgba(255,255,255,0.92)';
+      }
+    });
+  </script>
 </body>
 
 </html>
