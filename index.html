@@ -644,25 +644,25 @@
     @media (max-width: 768px) {
       /* Hero */
   .hero {
-    min-height: 100svh; /* fills the mobile viewport properly */
     height: auto;
+    min-height: unset;  /* ← let content decide the height */
     padding-top: 0;
     padding-bottom: 0;
     align-items: flex-start;
   }
 
-  .hero-content {
-    padding-top: 110px;  /* clears the fixed navbar */
-    padding-bottom: 56px;
+  /* background fills exactly however tall the hero grows */
+  .hero > div:first-child {
+    height: 100% !important;
+    min-height: unset !important;  /* ← remove the 100svh cap */
   }
 
-  /* make the absolute bg image always fill the hero height */
-  .hero > div:first-child,
-  .hero > div:first-child img {
-    height: 100%;
-    min-height: 100svh;
+  .hero-content {
+    padding-top: 90px;   /* clears navbar */
+    padding-bottom: 52px; /* room for stats */
   }
-      .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
+  
+  .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
       .hero-desc { font-size: 0.98rem; max-width: 100%; }
       .hero-ctas { gap: 12px; }
 
