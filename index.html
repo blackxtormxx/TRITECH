@@ -646,7 +646,7 @@
   .hero {
     height: auto;
     min-height: unset;
-    margin-top: 85px;  /* ← pushes entire hero + bg image below navbar */
+    margin-top: 0;        /* ← remove the gap */
     padding-top: 0;
     padding-bottom: 0;
     align-items: flex-start;
@@ -658,8 +658,8 @@
   }
 
   .hero-content {
-    padding-top: 28px;   /* ← now just a small breathing gap, no navbar to clear */
-    padding-bottom: 80px;
+    padding-top: 100px;    /* ← clears the ~85px navbar */
+    padding-bottom: 120px; /* ← enough for 3 stats across 2 rows */
   }
 
   .hero-title { font-size: 2.4rem; letter-spacing: -0.5px; }
