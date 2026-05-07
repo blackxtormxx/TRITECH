@@ -34,17 +34,7 @@
   h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
   img { max-width: 100%; }
 
-  /* NAVBAR */
-  .tt-nav { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: rgba(255,255,255,0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.05); transition: box-shadow 0.4s; padding: 14px 0; }
-  .tt-nav .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-  .tt-nav .logo img { height: 44px; display: block; }
-  .tt-nav .nav-links { display: flex; align-items: center; }
-  .tt-nav .nav-links a { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; color: #475569; text-decoration: none; padding: 4px 0; margin: 0 18px; position: relative; transition: color 0.3s; }
-  .tt-nav .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--amber); transition: width 0.35s; }
-  .tt-nav .nav-links a:hover, .tt-nav .nav-links a.active { color: var(--amber); }
-  .tt-nav .nav-links a:hover::after, .tt-nav .nav-links a.active::after { width: 100%; }
-  .mob-btn { display: none; background: none; border: 1px solid var(--amber-border); padding: 8px 13px; color: var(--navy); cursor: pointer; font-size: 1.05rem; line-height: 1; border-radius: 8px; }
-  @media(max-width:991px){ .tt-nav .nav-links { display: none; flex-direction: column; align-items: flex-start; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); padding: 12px 0; box-shadow: 0 8px 24px rgba(15,23,42,0.08); border-bottom: 1px solid rgba(0,0,0,0.07); } .tt-nav .nav-links.mob-open { display: flex; } .tt-nav .nav-links a { margin: 0; padding: 12px 28px; width: 100%; border-bottom: 1px solid rgba(0,0,0,0.04); } .tt-nav .nav-links a:last-child { border-bottom: none; } .mob-btn { display: block; } }
+  /* NAVBAR handled by theme.css */
 
   /* PAGE HERO */
   .page-hero { position: relative; padding: 140px 0 80px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 55%, #e2e8f0 100%); overflow: hidden; }
@@ -161,37 +151,6 @@
     </div>
   </div>
 </nav>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <svg class="page-hero-deco" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="250" cy="250" r="200" fill="none" stroke="#d97706" stroke-width="1.5"/>
-    <circle cx="250" cy="250" r="160" fill="none" stroke="#d97706" stroke-width="0.8" stroke-dasharray="8,6"/>
-    <circle cx="250" cy="250" r="110" fill="none" stroke="#d97706" stroke-width="1.5"/>
-    <path d="M250,250 Q244,194 250,140" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q296,224 342,200" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q306,250 360,250" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q296,276 342,300" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q256,306 250,360" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q204,276 158,300" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q194,250 140,250" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <path d="M250,250 Q204,224 158,200" fill="none" stroke="#d97706" stroke-width="1.2"/>
-    <circle cx="250" cy="250" r="32" fill="none" stroke="#d97706" stroke-width="1.8"/>
-    <circle cx="250" cy="250" r="14" fill="none" stroke="#d97706" stroke-width="1"/>
-    <circle cx="250" cy="250" r="5" fill="#d97706" opacity="0.6"/>
-  </svg>
-  <div class="container">
-    <div class="page-hero-content">
-      <div class="pg-eyebrow">Tritech Marketing</div>
-      <h1 class="pg-title">Our Products</h1>
-      <div class="breadcrumb-row">
-        <a href="../">Home</a>
-        <span>/</span>
-        <span class="current">Products</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- PRODUCTS -->
 <section class="tt-sec">
@@ -419,18 +378,37 @@
 
   <script>
     // Mobile menu toggle
-    document.getElementById('mobBtn').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('mob-open');
+    const mobBtn = document.getElementById('mobBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobBtn.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('mob-open');
+      mobBtn.setAttribute('aria-expanded', isOpen);
+      mobBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
     document.querySelectorAll('#navLinks a').forEach(function(a) {
       a.addEventListener('click', function() {
-        document.getElementById('navLinks').classList.remove('mob-open');
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
       });
+    });
+    document.addEventListener('click', function(e) {
+      if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
+      }
     });
     // Scroll shadow on navbar
     window.addEventListener('scroll', function() {
-      document.getElementById('mainNav').style.boxShadow =
-        window.scrollY > 30 ? '0 4px 24px rgba(15,23,42,0.08)' : 'none';
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 20) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+        nav.style.background = 'rgba(255,255,255,0.97)';
+      } else {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
+        nav.style.background = 'rgba(255,255,255,0.92)';
+      }
     });
   </script>
 </body>

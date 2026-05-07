@@ -427,18 +427,37 @@ With a strong commitment to quality, reliability, and customer satisfaction, Tri
 
   <script>
     // Mobile menu toggle
-    document.getElementById('mobBtn').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('mob-open');
+    const mobBtn = document.getElementById('mobBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobBtn.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('mob-open');
+      mobBtn.setAttribute('aria-expanded', isOpen);
+      mobBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
     });
     document.querySelectorAll('#navLinks a').forEach(function(a) {
       a.addEventListener('click', function() {
-        document.getElementById('navLinks').classList.remove('mob-open');
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
       });
+    });
+    document.addEventListener('click', function(e) {
+      if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
+      }
     });
     // Scroll shadow on navbar
     window.addEventListener('scroll', function() {
-      document.getElementById('mainNav').style.boxShadow =
-        window.scrollY > 30 ? '0 4px 24px rgba(15,23,42,0.08)' : 'none';
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 20) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+        nav.style.background = 'rgba(255,255,255,0.97)';
+      } else {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
+        nav.style.background = 'rgba(255,255,255,0.92)';
+      }
     });
   </script>
 </body>
